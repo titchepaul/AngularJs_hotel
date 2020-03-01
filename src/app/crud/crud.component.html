@@ -1,0 +1,76 @@
+<!-- <form #f="ngForm" (submit)="add(f)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Votre addresse</label>
+      <input type="email" class="form-control" [(ngModel)]="Email" name="Email" style="width:250px; height:30px;" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="firstPassword" name="firstPassword" style="width:250px; height:30px;" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="secondPassword" name="secondPassword" style="width:250px; height:30px;" placeholder="Password">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Inscrire</button>
+</form> -->
+
+<!-- Material form subscription -->
+
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Sign In</h5>
+              <form class="form-signin">
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label for="inputEmail">Email address</label>
+                </div>
+  
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <label for="inputPassword">Password</label>
+                </div>
+  
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                <hr class="my-4">
+                
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- <div class="card">
+    <br>
+    <br>
+      <div class="card-header">
+        <b>Add a user</b>
+      </div>
+      <div class="card-body">
+        <form name="formAdd" [formGroup]="formAdd">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" formControlName="email" aria-describedby="textHelp" placeholder="">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="pass" formControlName="pass" aria-describedby="textHelp" placeholder="">
+          </div>
+          <button type="submit" (click)="add()" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div> -->
+  

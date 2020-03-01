@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar color="">HOSTEL</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/">Accueil</a>
+      <!--<a mat-list-item routerLink="/carte">La carte</a> -->
+      <!--<a mat-list-item routerLink="/reserve">Réserver</a> -->
+      <!--<a mat-list-item routerLink="/schedule">Au programme</a> -->
+      <!--<a mat-list-item routerLink="/contact">Contact</a> -->
+      <!--<a mat-list-item routerLink="/crud">CRUD</a> -->
+      <!--<a mat-list-item routerLink="/add-user">Add-User</a> -->
+      <a mat-list-item routerLink="/crud-user">Crud-User</a>
+      <!--<a mat-list-item routerLink="/add-room">Add-Room</a> -->
+      <a mat-list-item routerLink="/crud-room">Crud-Room</a>
+      <a mat-list-item routerLink="/booked">Réservation</a>
+      <!--<a mat-list-item routerLink="/login">Login</a> -->
+      <a mat-list-item routerLink="/payed">Mes Réserves</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!-- <span>Hotel Service</span> -->
+<!-- <mat-toolbar-row> -->
+          <span>Hotel Service</span>
+          <span class="example-spacer"></span>
+          <div class="example-button-row">
+            <button mat-raised-button *ngIf="this.autSer.save" (click)="connect()">Login</button> 
+            <button mat-raised-button *ngIf="!this.autSer.save" (click)="deconnect()">Logout</button>
+            <!-- <button mat-raised-button>1</button>
+            <button mat-raised-button>2</button> -->
+          </div>
+          <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+     <!-- </mat-toolbar-row> -->
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <!-- Add Content Here -->
+  </mat-sidenav-content> 
+</mat-sidenav-container>

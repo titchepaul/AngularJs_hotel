@@ -1,0 +1,47 @@
+<div *ngIf="!isCheduleOk">
+        <form [formGroup]="reservationForm" (submit)="saveReservation()">
+                <mat-form-field>
+                        <input matInput [matDatepicker]="picker" placeholder="Choisir une date" FormControlName="date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker startView="year" [startAt]="date"></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                        <mat-select placeholder="heure" formControlName="time">
+                          <mat-option *ngFor="let to of timeOptions" [value]="to">
+                            {{to}}
+                          </mat-option>
+                        </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                        <mat-select placeholder="combien de personne" formControlName="people">
+                          <mat-option *ngFor="let po of peopleOptions" [value]="po">
+                            {{po}}
+                          </mat-option>
+                        </mat-select>
+                </mat-form-field>
+                <button mat-button type="submit">confirmer l'horaire</button>
+            </form>
+</div>
+
+{{reservationForm.value | json}}
+
+<div *ngIf="isScheduleOk">
+        <form #f="ngForm" (submit)="finalizeReservation(f)">
+                <mat-form-field>
+                    <input  matInput type="text" name="firstName" [(ngModel)]="client.firstName" placeholder="prénom">
+                </mat-form-field>
+                <mat-form-field>
+                        <input  matInput type="text" name="lastName" [(ngModel)]="client.lastName" placeholder="Nom">
+                </mat-form-field>
+                <mat-form-field>
+                        <input  matInput type="text" name="email" [(ngModel)]="client.email" placeholder="email">
+                </mat-form-field>
+                <mat-form-field>
+                        <input  matInput type="text" name="phone" [(ngModel)]="client.phone" placeholder="phone">
+                </mat-form-field>
+                <button mat-button type="submit">réserver</button>
+        </form>
+</div>
+
+ <!--{{f.controls.firstName.value}} !-->
+ 

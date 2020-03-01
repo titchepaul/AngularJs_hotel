@@ -1,0 +1,46 @@
+<div class="container">
+        <div class="row align-items-xl-center">
+          <div class="col-md-1">
+            <br><br><br><br>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-1">
+            <p class="d-flex justify-content-center"></p>
+          </div>
+          <div class="col-md-10">
+            <table class="table">
+              <thead class="thead-dark">
+              <!-- <button type="button" routerLink="/add-room" class="btn btn-primary">+</button> -->
+              <br><br>
+              <tr class="text-center">
+                <th scope="col">Room Number</th>
+                <th scope="col">NbrePieces</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Réserver</th>          
+              </tr>
+              </thead>
+              <tbody *ngFor="let room of ( myAllRooms | async)">
+                <tr class="text-xl-center" *ngIf="room.status == 0">
+                
+                      <td style="color:white">{{room.roomsId}}</td>
+                      <td style="color:white">{{room.nbrePieces}}</td>
+                      <td style="color:white">€{{room.prix}}</td>
+                      <td>
+                          <button type="button" (click)="reserver(room.roomsId)"
+                          class="btn btn-light">Réserver
+                          </button>
+                      </td>                                 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-1">
+            <p class="d-flex justify-content-center"></p>
+          </div>
+        </div>
+</div>
+      
+
